@@ -13,13 +13,14 @@ number_dict = {
 # int(number in base 10, changed base) -> string
 # returns a string of the number in a different base
 def convert(num, b):
-    # uses run_convert function for recursive work
-    string_a =  run_convert(num,b)
-    # if loop used to check for special case when number is 0
-    if string_a == "":
-        return "0"
-    else:
-        return string_a
+    if b <=16:
+        # uses run_convert function for recursive work
+        string_a =  run_convert(num,b)
+        # if loop used to check for special case when number is 0
+        if string_a == "":
+            return "0"
+        else:
+            return string_a
 
 # int(number and base) -> string
 # changes the number from base 10 to a sepcified base between 2 to 16
