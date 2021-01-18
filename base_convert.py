@@ -9,9 +9,21 @@ number_dict = {
     14:"E",
     15:"F"
 }
-# int(number in base 10, changed base) -> int(number in different base)
-# changes the number from base 10 to a sepcified base between 2 to 16
+
+# int(number in base 10, changed base) -> string
+# returns a string of the number in a different base
 def convert(num, b):
+    # uses run_convert function for recursive work
+    string_a =  run_convert(num,b)
+    # if loop used to check for special case when number is 0
+    if string_a == "":
+        return "0"
+    else:
+        return string_a
+
+# int(number and base) -> string
+# changes the number from base 10 to a sepcified base between 2 to 16
+def run_convert(num,b):
     """Recursive function that returns a string representing num in the base b"""
     if num==0:
         return ""
@@ -20,9 +32,11 @@ def convert(num, b):
         temp_remainder = number_dict[num%b]
     else:
         temp_remainder = num % b
-    return convert(next_num,b) + str(temp_remainder)
+    return run_convert(next_num,b) + str(temp_remainder)
 
-print(number_dict[10])
+
+
+print(convert(0,2))
 print(convert(45,2))
 print(convert(30,4))
 print(convert(316,16))
