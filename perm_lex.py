@@ -16,4 +16,3 @@ def perm_gen_lex(string):
         string_list = string_list + temp_list
     return string_list    
 
-#print(perm_gen_lex("abcd"))

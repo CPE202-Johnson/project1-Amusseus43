@@ -36,8 +36,3 @@ def run_convert(num,b):
     return run_convert(next_num,b) + str(temp_remainder)
 
 
-
-print(convert(0,2))
-print(convert(45,2))
-print(convert(30,4))
-print(convert(316,16))

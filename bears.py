@@ -15,15 +15,14 @@ def bears(n):
     if n % 5 == 0 and bears(n-42):
         return True
     if n % 3 == 0 or n % 4 == 0:
+        # ex: 434 -> 3 * 4
         last_digit = n%10
         first_digit = (n%100 - last_digit)/10
         return_second_rule = first_digit * last_digit
-        return return_second_rule > 0 and bears(n- return_second_rule)
+        return (return_second_rule > 0) and bears(n- return_second_rule)
     return False
 
 
-
-print(bears(41))
 
 
 
