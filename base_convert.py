@@ -28,7 +28,7 @@ def run_convert(num,b):
     """Recursive function that returns a string representing num in the base b"""
     if num==0:
         return ""
-    next_num = math.floor(num/b)
+    next_num = num//b
     if b> 10 and (num%b)>=10:
         temp_remainder = number_dict[num%b]
     else:
